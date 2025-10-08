@@ -1,0 +1,69 @@
+/* about.component.css */
+
+/* Contenedor principal de la sección */
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Nombre */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+/* Párrafo de presentación */
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+
+/* Contenedor de enlaces / iconos de contacto */
+div {
+  display: flex;
+  gap: 1.5rem;              /* Espacio entre iconos */
+  justify-content: center;   /* Centrado horizontal */
+  flex-wrap: wrap;           /* En móvil se apilan si no caben */
+}
+
+/* Estilo de los enlaces/iconos */
+div a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+/* Hover en enlaces */
+div a:hover {
+  color: var(--accent-primary);
+  transform: scale(1.2);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  div {
+    gap: 1rem;
+  }
+}

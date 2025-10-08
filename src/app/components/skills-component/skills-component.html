@@ -1,0 +1,50 @@
+<section class="skills-section">
+    <h2>Mis Habilidades</h2>
+
+    <div class="skills-container">
+        <!-- Hard Skills -->
+        <div class="skill-category">
+            <h3><i class="fas fa-code"></i> Hard Skills</h3>
+            <div class="skills-grid">
+                @for (skill of skillsByCategory.hardskills; track skill.name) {
+                    <div class="skill-card">
+                        @if (skill.icon) { 
+                            <i [class]="skill.icon"></i> 
+                        }
+                        <span class="skill-name">{{skill.name}}</span>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Soft Skills -->
+        <div class="skill-category">
+            <h3><i class="fas fa-heart"></i> Soft Skills</h3>
+            <div class="skills-grid">
+                @for (skill of skillsByCategory.softskills; track skill.name) {
+                    <div class="skill-card soft-skill">
+                        @if (skill.icon) { 
+                            <i [class]="skill.icon"></i> 
+                        }
+                        <span class="skill-name">{{ skill.name }}</span>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="skill-category">
+            <h3><i class="fas fa-tools"></i> Herramientas</h3>
+            <div class="skills-grid">
+                @for (skill of skillsByCategory.tools; track skill.name) {
+                    <div class="skill-card tool">
+                        @if (skill.icon) { 
+                            <i [class]="skill.icon"></i> 
+                        }
+                        <span class="skill-name">{{ skill.name }}</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

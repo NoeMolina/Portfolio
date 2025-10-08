@@ -1,0 +1,15 @@
+<section class="projects-section">
+    <h2>Mis Proyectos</h2>
+    <div class="projects-container">
+        @for (project of projects; track project) {
+            <app-card [project]="project"></app-card>
+        }
+
+        @empty {
+            <div class="no-projects">
+                <p>No hay projectos disponibles por el momento</p>
+            </div>
+        }
+
+    </div>
+</section>
