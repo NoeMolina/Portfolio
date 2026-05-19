@@ -1,0 +1,27 @@
+<div class="experience-card">
+
+  <div class="experience-header">
+    @if (experience.logo) {
+      <img [src]="experience.logo" [alt]="experience.company" class="company-logo" />
+    }
+    <div>
+      <h3>{{ experience.role }}</h3>
+      <h4>{{ experience.company }}</h4>
+      <span class="period">{{ experience.period }}</span>
+      <p>{{ experience.description }}</p>
+
+      <div class="technologies">
+        @for (tech of experience.technologies; track tech) {
+          <span class="tech-tag">
+            @if (getIcon(tech)) {
+              <i [class]="getIcon(tech)"></i>
+            }
+            {{ tech }}
+          </span>
+        }
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,10 +1,11 @@
 <nav aria-label="Menu principal">
     <ul>
         <li><a href="#about">Sobre mi</a></li>
+        <li><a href="#experience">Experiencia</a></li>
         <li><a href="#skills">Habilidades</a></li>
         <li><a href="#projects">Projectos</a></li>
         <li>
-            <button class="theme-toogle"
+            <button class="theme-toggle"
             (click)="toggleTheme()"
             [attr.aria-label]="themeService.isDark() ? 'Activar tema claro' : 'Activar tema oscuro'">
                 <i [class]="themeService.isDark() ? 'fas fa-sun' : 'fas fa-moon'"></i>

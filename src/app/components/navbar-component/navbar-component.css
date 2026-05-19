@@ -1,55 +1,81 @@
-nav {
+:host {
+    display: block;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: var(--bg-primary);   
-    box-shadow: 0 2px 5px var(--shadow-light);  
     z-index: 1000;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+nav {
+    width: min(1200px, calc(100% - 1rem));
+    margin: 0.5rem auto 0;
+    border: 1px solid var(--border-color);
+    border-top: 0;
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    background: var(--nav-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-sm);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+}
+
+:host(.is-scrolled) nav {
+    background: var(--nav-bg-scrolled);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(255, 255, 255, 0.08);
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    align-items: center;  
-    gap: 2rem;
+    align-items: center;
+    gap: 1rem;
     margin: 0;
-    padding: 1rem;
+    padding: 0.9rem 1.25rem;
     list-style: none;
+    flex-wrap: wrap;
 }
 
 nav a {
-    color: var(--text-primary);    
-    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--text-secondary);
+    font-weight: 600;
     text-decoration: none;
-    transition: color 0.3s ease;
+    padding: 0.65rem 0.95rem;
+    border-radius: var(--radius-pill);
+    transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
 }
 
 nav a:hover {
-    color: var(--accent-primary);  
+    color: var(--text-primary);
+    background: var(--surface-glass);
+    transform: translateY(-1px);
 }
 
-
 .theme-toggle {
-    background: none;
-    border: 2px solid var(--border-color);
+    background: var(--surface-glass);
+    border: 1px solid var(--border-color);
     color: var(--text-primary);
     padding: 0.5rem;
     border-radius: 50%;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
+    box-shadow: var(--shadow-sm);
 }
 
 .theme-toggle:hover {
     border-color: var(--accent-primary);
     color: var(--accent-primary);
-    transform: rotate(180deg);  
+    transform: translateY(-1px) rotate(12deg);
+    box-shadow: 0 12px 32px var(--accent-glow);
 }
 
 .theme-toggle i {
@@ -57,14 +83,20 @@ nav a:hover {
 }
 
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;   
-        align-items: center;
-        gap: 1rem;
+    nav {
+        width: calc(100% - 0.75rem);
     }
-    
+
+    nav ul {
+        gap: 0.5rem;
+    }
+
+    nav a {
+        padding: 0.55rem 0.8rem;
+    }
+
     .theme-toggle {
-        width: 35px;
-        height: 35px;
+        width: 38px;
+        height: 38px;
     }
 }

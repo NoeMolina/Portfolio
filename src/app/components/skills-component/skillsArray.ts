@@ -1,39 +1,47 @@
 export interface Skill {
   name: string;
   level: number; // 1-100
-  category: 'hardskills' | 'softskills' | 'tools';
-  icon?: string; // Font Awesome class
+  category: 'frontend' | 'backend' | 'database' | 'architecture' | 'tools' | 'softskills';
+  icon?: string;
 }
 
 export const skills: Skill[] = [
-  // Hard Skills (Técnicas)
-  { name: 'Angular', level: 85, category: 'hardskills', icon: 'fab fa-angular' },
-  { name: 'React', level: 80, category: 'hardskills', icon: 'fab fa-react' },
-  { name: 'TypeScript', level: 75, category: 'hardskills', icon: 'fab fa-js-square' },
-  { name: 'JavaScript', level: 80, category: 'hardskills', icon: 'fab fa-js-square' },
-  { name: 'HTML5', level: 90, category: 'hardskills', icon: 'fab fa-html5' },
-  { name: 'CSS3', level: 85, category: 'hardskills', icon: 'fab fa-css3-alt' },
-  { name: 'Node.js', level: 75, category: 'hardskills', icon: 'fab fa-node-js' },
-  { name: 'Express.js', level: 75, category: 'hardskills', icon: 'fas fa-server' },
-  { name: 'Java', level: 80, category: 'hardskills', icon: 'fab fa-java' },
-  { name: 'PHP', level: 70, category: 'hardskills', icon: 'fab fa-php' },
-  { name: 'Laravel', level: 68, category: 'hardskills', icon: 'fab fa-laravel' },
-  { name: 'MySQL', level: 80, category: 'hardskills', icon: 'fas fa-database' },
-  { name: 'PostgreSQL', level: 70, category: 'hardskills', icon: 'fas fa-database' },
-  
+  // Frontend
+  { name: 'Angular', level: 92, category: 'frontend', icon: 'fab fa-angular' },
+  { name: 'TypeScript', level: 90, category: 'frontend', icon: 'fab fa-js-square' },
+  { name: 'JavaScript', level: 86, category: 'frontend', icon: 'fab fa-js-square' },
+  { name: 'HTML5', level: 92, category: 'frontend', icon: 'fab fa-html5' },
+  { name: 'CSS3', level: 88, category: 'frontend', icon: 'fab fa-css3-alt' },
+  { name: 'TanStack Query', level: 78, category: 'frontend', icon: 'fas fa-bolt' },
+
+  // Backend
+  { name: 'Node.js', level: 88, category: 'backend', icon: 'fab fa-node-js' },
+  { name: 'Express.js', level: 84, category: 'backend', icon: 'fas fa-server' },
+  { name: 'Java', level: 76, category: 'backend', icon: 'fab fa-java' },
+  { name: 'REST API', level: 88, category: 'backend', icon: 'fas fa-network-wired' },
+  { name: 'JWT', level: 82, category: 'backend', icon: 'fas fa-key' },
+
+  // Bases de Datos
+  { name: 'PostgreSQL', level: 84, category: 'database', icon: 'fas fa-database' },
+  { name: 'MySQL', level: 78, category: 'database', icon: 'fas fa-database' },
+  { name: 'Supabase', level: 80, category: 'database', icon: 'fas fa-cloud' },
+
+  // Arquitectura
+  { name: 'SOLID', level: 86, category: 'architecture', icon: 'fas fa-cubes' },
+  { name: 'Clean Architecture', level: 82, category: 'architecture', icon: 'fas fa-layer-group' },
+  { name: 'Hexagonal Architecture', level: 80, category: 'architecture', icon: 'fas fa-draw-polygon' },
+
+  // Herramientas
+  { name: 'Git', level: 92, category: 'tools', icon: 'fab fa-git-alt' },
+  { name: 'GitHub', level: 90, category: 'tools', icon: 'fab fa-github' },
+  { name: 'Docker', level: 76, category: 'tools', icon: 'fab fa-docker' },
+  { name: 'Linux', level: 82, category: 'tools', icon: 'fab fa-linux' },
+  { name: 'Postman', level: 86, category: 'tools', icon: 'fas fa-paper-plane' },
+  { name: 'Jira', level: 78, category: 'tools', icon: 'fab fa-atlassian' },
+
   // Soft Skills
-  { name: 'Trabajo en Equipo', level: 90, category: 'softskills', icon: 'fas fa-users' },
-  { name: 'Comunicación', level: 85, category: 'softskills', icon: 'fas fa-comments' },
-  { name: 'Resolución de Problemas', level: 88, category: 'softskills', icon: 'fas fa-lightbulb' },
-  { name: 'Liderazgo', level: 75, category: 'softskills', icon: 'fas fa-crown' },
-  { name: 'Adaptabilidad', level: 90, category: 'softskills', icon: 'fas fa-sync-alt' },
-  { name: 'Pensamiento Crítico', level: 85, category: 'softskills', icon: 'fas fa-brain' },
-  { name: 'Gestión del Tiempo', level: 80, category: 'softskills', icon: 'fas fa-clock' },
-  
-  // Tools (Herramientas)
-  { name: 'Git', level: 85, category: 'tools', icon: 'fab fa-git-alt' },
-  { name: 'VS Code', level: 90, category: 'tools', icon: 'fas fa-code' },
-  { name: 'Insomnia', level: 80, category: 'tools', icon: 'fas fa-satellite-dish' },
-  { name: 'Jira', level: 75, category: 'tools', icon: 'fab fa-atlassian' },
-  { name: 'GitHub', level: 85, category: 'tools', icon: 'fab fa-github' },
+  { name: 'Trabajo en Equipo', level: 92, category: 'softskills', icon: 'fas fa-users' },
+  { name: 'Comunicación', level: 88, category: 'softskills', icon: 'fas fa-comments' },
+  { name: 'Resolución de Problemas', level: 90, category: 'softskills', icon: 'fas fa-lightbulb' },
+  { name: 'Adaptabilidad', level: 87, category: 'softskills', icon: 'fas fa-sync-alt' },
 ];

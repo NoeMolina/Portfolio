@@ -10,13 +10,15 @@ import { skills, Skill } from './skillsArray';
 })
 export class SkillsComponent {
   skills = skills;
-  
-  // Agrupar skills por categoría
+
   get skillsByCategory() {
     return {
-      hardskills: this.skills.filter(skill => skill.category === 'hardskills'),
-      softskills: this.skills.filter(skill => skill.category === 'softskills'),
-      tools: this.skills.filter(skill => skill.category === 'tools')
+      frontend: this.skills.filter((skill) => skill.category === 'frontend'),
+      backend: this.skills.filter((skill) => skill.category === 'backend'),
+      database: this.skills.filter((skill) => skill.category === 'database'),
+      architecture: this.skills.filter((skill) => skill.category === 'architecture'),
+      tools: this.skills.filter((skill) => skill.category === 'tools'),
+      softskills: this.skills.filter((skill) => skill.category === 'softskills'),
     };
   }
 }

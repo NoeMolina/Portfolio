@@ -1,26 +1,17 @@
-:host {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 2rem;
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 .projects-section {
-  max-width: 100%;
+  max-width: 1200px;
   width: 100%;
+  margin: 0 auto;
   text-align: center;
+  color: var(--text-primary);
+  animation: section-content-in 0.9s ease both;
 }
 
 .projects-section h2 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  letter-spacing: -0.04em;
   margin-bottom: 2rem;
-  color: var(--text-primary);
 }
 
 .projects-container {
@@ -30,9 +21,14 @@
   overflow-y: hidden;
   padding: 1rem 0;
   scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
   /* Estilo del scrollbar */
   scrollbar-width: thin;
   scrollbar-color: var(--accent-primary) var(--border-color);
+}
+
+.projects-container app-card {
+  scroll-snap-align: start;
 }
 
 /* Webkit scrollbar styles */
@@ -60,14 +56,22 @@
   padding: 2rem;
 }
 
+@keyframes section-content-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-  :host {
-    padding: 1rem;
-  }
-  
   .projects-section h2 {
-    font-size: 2.5rem;
+    font-size: clamp(2.1rem, 8vw, 2.8rem);
   }
   
   .projects-container {

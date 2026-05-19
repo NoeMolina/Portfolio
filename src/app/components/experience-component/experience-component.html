@@ -1,0 +1,17 @@
+<section class="experience-section">
+
+  <h2>Experiencia</h2>
+
+  <div class="experience-list">
+
+    @for (experience of experiences; track experience.company) {
+
+      <app-experience-card
+        [experience]="experience">
+      </app-experience-card>
+
+    }
+
+  </div>
+
+</section>
